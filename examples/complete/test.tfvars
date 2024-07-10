@@ -1,5 +1,3 @@
-naming_prefix = "demo"
-
 interface_vpc_endpoints = {
   ecr-dkr = {
     service_name        = "ecr.dkr"
