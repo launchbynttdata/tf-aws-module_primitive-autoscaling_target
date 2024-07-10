@@ -11,12 +11,13 @@
 // limitations under the License.
 
 locals {
-  random_id             = random_integer.priority.result
-  naming_prefix         = "${var.naming_prefix}-${local.random_id}"
-  ingress_naming_prefix = "${var.naming_prefix}-ing-${local.random_id}"
-  vpc_name              = "${local.naming_prefix}-vpc-${local.random_id}"
-  namespace_name        = "${local.naming_prefix}.local"
-  ecs_sg_name           = "${local.naming_prefix}-sg-${local.random_id}"
+  random_id               = random_integer.priority.result
+  naming_prefix           = "${var.logical_product_family}-${var.logical_product_service}"
+  logical_product_service = "${var.logical_product_service}-${local.random_id}"
+  ingress_naming_prefix   = "${var.naming_prefix}-ing-${local.random_id}"
+  vpc_name                = "${local.naming_prefix}-vpc-${local.random_id}"
+  namespace_name          = "${local.naming_prefix}.local"
+  ecs_sg_name             = "${local.naming_prefix}-sg-${local.random_id}"
 
   tags = merge(var.tags, { provisioner = "Terraform" })
 }
