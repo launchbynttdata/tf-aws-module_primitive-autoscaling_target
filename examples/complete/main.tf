@@ -30,7 +30,8 @@ module "vpc" {
 }
 
 module "ecs_platform" {
-  source = "git::https://github.com/launchbynttdata/tf-aws-module_collection-ecs_appmesh_platform?ref=1.0.0"
+  source  = "terraform.registry.launch.nttdata.com/module_collection/ecs_appmesh_platform/aws"
+  version = "~> 1.0"
 
   vpc_id                  = module.vpc.vpc_id
   private_subnets         = module.vpc.private_subnets
