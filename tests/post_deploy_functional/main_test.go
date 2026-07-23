@@ -22,5 +22,5 @@ func TestAutoscalingTargetModule(t *testing.T) {
 		SetTestConfigFileName(infraTFVarFileNameDefault).
 		Build()
 
-	lib.RunSetupTestTeardown(t, *ctx, testimpl.TestAutoscalingTarget)
+	lib.RunSetupTestTeardown(t, *ctx, testimpl.TestComposableAutoscalingTarget)
 }
