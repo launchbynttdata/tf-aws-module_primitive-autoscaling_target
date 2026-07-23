@@ -13,7 +13,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestAutoscalingTarget(t *testing.T, ctx types.TestContext) {
+func TestComposableAutoscalingTarget(t *testing.T, ctx types.TestContext) {
 	appAutoscalingClient := applicationautoscaling.NewFromConfig(GetAWSConfig(t))
 	targetId := terraform.Output(t, ctx.TerratestTerraformOptions(), "autoscaling_target_id")
 

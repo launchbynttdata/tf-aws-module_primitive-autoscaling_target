@@ -122,19 +122,13 @@ If `make check` target is successful, developer is good to commit the code to pr
 # Know Issues
 Currently, the `encrypt at transit` is not supported in terraform. There is an open issue for this logged with Hashicorp - https://github.com/hashicorp/terraform-provider-aws/pull/26987
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
-
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.72.1 |
 
 ## Modules
 
@@ -150,18 +144,18 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_min_capacity"></a> [min\_capacity](#input\_min\_capacity) | Min capacity of the scalable target. | `number` | n/a | yes |
 | <a name="input_max_capacity"></a> [max\_capacity](#input\_max\_capacity) | Max capacity of the scalable target. | `number` | n/a | yes |
-| <a name="input_scalable_dimension"></a> [scalable\_dimension](#input\_scalable\_dimension) | Scalable dimension of scalable target. Details to be found at<br>    https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters | `string` | n/a | yes |
-| <a name="input_service_namespace"></a> [service\_namespace](#input\_service\_namespace) | AWS service namespace of the scalable target. Details to be found at<br>    https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters | `string` | n/a | yes |
-| <a name="input_resource_id"></a> [resource\_id](#input\_resource\_id) | Resource type and unique identifier string for the resource associated with the scaling policy. Details found at<br>    https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters | `string` | n/a | yes |
-| <a name="input_role_arn"></a> [role\_arn](#input\_role\_arn) | Optional ARN of the IAM role that allows Application AutoScaling to modify your scalable target on your behalf.<br>    This defaults to an IAM Service-Linked Role for most services and custom IAM Roles are ignored by the API<br>    for those namespaces. | `string` | `""` | no |
+| <a name="input_min_capacity"></a> [min\_capacity](#input\_min\_capacity) | Min capacity of the scalable target. | `number` | n/a | yes |
+| <a name="input_resource_id"></a> [resource\_id](#input\_resource\_id) | Resource type and unique identifier string for the resource associated with the scaling policy. Details found at<br/>    https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters | `string` | n/a | yes |
+| <a name="input_role_arn"></a> [role\_arn](#input\_role\_arn) | Optional ARN of the IAM role that allows Application AutoScaling to modify your scalable target on your behalf.<br/>    This defaults to an IAM Service-Linked Role for most services and custom IAM Roles are ignored by the API<br/>    for those namespaces. | `string` | `""` | no |
+| <a name="input_scalable_dimension"></a> [scalable\_dimension](#input\_scalable\_dimension) | Scalable dimension of scalable target. Details to be found at<br/>    https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters | `string` | n/a | yes |
+| <a name="input_service_namespace"></a> [service\_namespace](#input\_service\_namespace) | AWS service namespace of the scalable target. Details to be found at<br/>    https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | An arbitrary map of tags that can be added to all resources. | `map(string)` | `{}` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_id"></a> [id](#output\_id) | ID of the Autoscaling target |
 | <a name="output_arn"></a> [arn](#output\_arn) | ARN of the Autoscaling target |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+| <a name="output_id"></a> [id](#output\_id) | ID of the Autoscaling target |
+<!-- END_TF_DOCS -->

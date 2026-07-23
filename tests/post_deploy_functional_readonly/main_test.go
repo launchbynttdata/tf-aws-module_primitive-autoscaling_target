@@ -22,5 +22,5 @@ func TestVirtualServiceModule(t *testing.T) {
 		SetTestConfigFileName(infraTFVarFileNameDefault).
 		Build()
 
-	lib.RunNonDestructiveTest(t, *ctx, testimpl.TestAutoscalingTarget)
+	lib.RunNonDestructiveTest(t, *ctx, testimpl.TestComposableAutoscalingTarget)
 }
