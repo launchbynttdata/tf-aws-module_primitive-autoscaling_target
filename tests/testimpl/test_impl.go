@@ -15,7 +15,7 @@ import (
 
 func TestComposableAutoscalingTarget(t *testing.T, ctx types.TestContext) {
 	appAutoscalingClient := applicationautoscaling.NewFromConfig(GetAWSConfig(t))
-	targetId := terraform.Output(t, ctx.TerratestTerraformOptions(), "autoscaling_target_id")
+	targetId := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "autoscaling_target_id")
 
 	output, err := appAutoscalingClient.DescribeScalableTargets(context.TODO(), &applicationautoscaling.DescribeScalableTargetsInput{
 		ServiceNamespace: "ecs",
